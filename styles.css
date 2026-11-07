@@ -50,7 +50,7 @@ a { color: var(--orange-dark); }
 .skip-link:focus { top: 0; }
 
 /* Clear focus ring for keyboard users */
-:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--brown); outline-offset: 3px; }
 
 /* ===== 4. Header & navigation (mobile first) ===== */
 .site-header {
