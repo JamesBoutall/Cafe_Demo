@@ -9,7 +9,7 @@
   --brown: #4a2c1a;
   --brown-light: #7a5238;
   --orange: #e8832a;
-  --orange-dark: #b85d10;   /* dark enough for readable text on cream */
+  --orange-dark: #9a4a08;   /* 5.9:1 on cream, 5.2:1 on sand, 6.2:1 with white text */
   --white: #ffffff;
   --radius: 14px;
   --shadow: 0 6px 18px rgba(74, 44, 26, 0.12);
