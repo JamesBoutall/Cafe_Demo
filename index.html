@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- index.html: the STRUCTURE of the page. Browsers read this file first. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Makes the page scale correctly on phones (mobile-first) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sunrise Corner Café | Demo Website</title>
+  <meta name="description" content="A fictional café website built as a learning demo.">
+  <!-- Links the CSS file. The filename must match exactly. -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- "defer" = load the script without slowing down the page -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Accessibility: lets keyboard users jump past the menu -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ===== HEADER & NAVIGATION ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="Sunrise Corner Café home">
+        <span class="logo-sun" aria-hidden="true"></span>
+        Sunrise Corner
+      </a>
+
+      <!-- Menu button: only visible on small screens -->
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav">
+        <span class="visually-hidden">Toggle menu</span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+      </button>
+
+      <nav id="siteNav" class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#hours">Hours</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== HERO: the first thing visitors see ===== -->
+    <section class="hero" id="top">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">Fresh. Local. Friendly.</p>
+          <h1>Start your day at Sunrise Corner Café</h1>
+          <p>Handmade coffee, warm pastries and a cosy seat waiting for you.</p>
+          <a class="btn" href="#menu">See our menu</a>
+        </div>
+        <!-- Placeholder "image" made only from CSS shapes (no copyrighted photos) -->
+        <div class="hero-art" role="img" aria-label="Illustration of a coffee cup">
+          <div class="cup"><div class="cup-handle"></div></div>
+          <div class="steam steam-1"></div>
+          <div class="steam steam-2"></div>
+          <div class="steam steam-3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section" id="about">
+      <div class="container narrow">
+        <h2>About us</h2>
+        <p>
+          Sunrise Corner Café is a fictional neighbourhood café created for this
+          demo. We imagine a small place where everyone knows your name, the
+          coffee is made with care and the muffins are always fresh.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== MENU CARDS ===== -->
+    <section class="section alt" id="menu">
+      <div class="container">
+        <h2>Our menu</h2>
+        <p class="section-intro">Sample items and prices (demo only).</p>
+        <div class="cards">
+          <article class="card">
+            <div class="card-art art-coffee" aria-hidden="true"></div>
+            <h3>Flat White</h3>
+            <p>Smooth espresso with silky steamed milk.</p>
+            <p class="price">R38</p>
+          </article>
+          <article class="card">
+            <div class="card-art art-muffin" aria-hidden="true"></div>
+            <h3>Blueberry Muffin</h3>
+            <p>Baked every morning with real berries.</p>
+            <p class="price">R28</p>
+          </article>
+          <article class="card">
+            <div class="card-art art-toast" aria-hidden="true"></div>
+            <h3>Avo Toast</h3>
+            <p>Seeded bread, smashed avocado and lemon.</p>
+            <p class="price">R62</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== OPENING HOURS (script.js highlights today) ===== -->
+    <section class="section" id="hours">
+      <div class="container narrow">
+        <h2>Opening hours</h2>
+        <table class="hours-table">
+          <caption class="visually-hidden">Opening hours by day</caption>
+          <thead>
+            <tr><th scope="col">Day</th><th scope="col">Hours</th></tr>
+          </thead>
+          <tbody>
+            <tr data-day="1"><th scope="row">Monday</th><td>07:00 – 17:00</td></tr>
+            <tr data-day="2"><th scope="row">Tuesday</th><td>07:00 – 17:00</td></tr>
+            <tr data-day="3"><th scope="row">Wednesday</th><td>07:00 – 17:00</td></tr>
+            <tr data-day="4"><th scope="row">Thursday</th><td>07:00 – 17:00</td></tr>
+            <tr data-day="5"><th scope="row">Friday</th><td>07:00 – 20:00</td></tr>
+            <tr data-day="6"><th scope="row">Saturday</th><td>08:00 – 20:00</td></tr>
+            <tr data-day="0"><th scope="row">Sunday</th><td>08:00 – 14:00</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section alt" id="contact">
+      <div class="container narrow">
+        <h2>Contact us</h2>
+        <p>Address: 12 Example Street, Your Town (placeholder)<br>
+           Phone: 000 000 0000 (placeholder)</p>
+
+        <!-- Demo form: it does NOT send anything. A static site has no server. -->
+        <form id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+            <p class="error" id="nameError" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="email">Your email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+            <p class="error" id="emailError" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <p class="error" id="messageError" role="alert"></p>
+          </div>
+          <button class="btn" type="submit">Send message</button>
+          <p id="formStatus" class="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year">2026</span> Sunrise Corner Café. Fictional demo project. Not a real business.</p>
+    </div>
+  </footer>
+</body>
+</html>
