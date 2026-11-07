@@ -23,7 +23,8 @@ siteNav.querySelectorAll('a').forEach((link) => {
  
 // Close the menu with the Escape key (keyboard accessibility)
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') {
+  // Only react if the menu is actually open
+  if (event.key === 'Escape' && siteNav.classList.contains('open')) {
     setMenu(false);
     navToggle.focus();
   }
